@@ -3,7 +3,7 @@ package es.orricoquiles.puzzlerobot;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class PuzzleRobotControlador {
     @FXML
     private Label welcomeText;
 

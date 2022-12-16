@@ -74,7 +74,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>es.orricoquiles.puzzlerobot/es.orricoquiles.puzzlerobot.HelloApplication
+                            <mainClass>es.orricoquiles.puzzlerobot/es.orricoquiles.puzzlerobot.PuzzleRobot
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
