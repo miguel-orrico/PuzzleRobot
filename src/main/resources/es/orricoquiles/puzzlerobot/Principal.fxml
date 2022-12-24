@@ -1,16 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="es.orricoquiles.puzzlerobot.PuzzleRobotControlador">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.orricoquiles.puzzlerobot.PuzzleRobotControlador">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+   <SplitPane fx:id="panelDividido" dividerPositions="0.5020508613617719" prefHeight="399.0" prefWidth="1204.0">
+     <items>
+       <AnchorPane fx:id="panelIzquierdo" minHeight="0.0" minWidth="100.0" prefHeight="158.0" prefWidth="327.0">
+            <children>
+               <ImageView fx:id="imagenIzquierda" fitHeight="269.0" fitWidth="386.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@SinImagen.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </AnchorPane>
+       <AnchorPane fx:id="panelDerecho" minHeight="0.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #000;">
+            <children>
+               <ImageView fx:id="imagenDerecha" fitHeight="316.0" fitWidth="450.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@SinImagen.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </AnchorPane>
+     </items>
+   </SplitPane>
+   <SplitPane dividerPositions="0.5012305168170632" prefHeight="379.0" prefWidth="1238.0">
+     <items>
+       <AnchorPane fx:id="listaPiezas" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+     </items>
+   </SplitPane>
+   <GridPane>
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Button onAction="#detectarFondoClick" text="Detectar fondo" />
+         <Button onAction="#detectarPiezasClick" text="Detectar piezas" GridPane.columnIndex="1" />
+      </children>
+   </GridPane>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label fx:id="welcomeText" />
+    <Button onAction="#cargarImagenClick" text="Cargar Imagen" />
 </VBox>
